@@ -129,9 +129,9 @@ const PrivateScreen = ({navigation}) => {
   },[])
 
   return(
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor:'gray'}}>
       <KeyboardAvoidingView behavior="position">
-        <ScrollView ref={msgsviewref} style={{height:'89%', margin:10, marginBottom:0, width:'95%', borderColor:'black', borderWidth:2}}>
+        <ScrollView ref={msgsviewref} style={{height:'87%', margin:10, marginBottom:0, width:'95%'}}>
           <Text style={styles.meassenderchatview}>Hello Amirhossein, how you doin?</Text>
           <Text style={styles.measrecieverchatview}>Hey, fine. Are you ready? I'll be there 10 mins later bro!</Text>
           <Text style={styles.measrecieverchatview}>Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG</Text>
@@ -144,9 +144,9 @@ const PrivateScreen = ({navigation}) => {
           <Text style={styles.meassenderchatview}>Yes you are using your past experience very well! that's great! you can bro! sjkdfsd kjhsdf hgfdjh jhkh sdjfhkknjsdfk jksd</Text>
 
         </ScrollView>
-        <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-          <TextInput style={styles.input}/>
-          <Icon style={{marginRight: 10, marginTop:10}} size={40} type='font-awesome' name="telegram"/>
+        <View style={{flexDirection:'row', justifyContent:'space-between', marginTop:15}}>
+          <TextInput placeholder="Your messegae..." multiline={true} style={styles.inputChat}/>
+          <Icon style={{marginLeft: '88%', marginTop:10,}} size={40} type='font-awesome' name="telegram"/>
         </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
@@ -222,8 +222,23 @@ const FindFriendsScreen = ({navigation, route}) => {
 
 const SettingScreen = ({navigation, route}) => {
 
+  const [manualbrokerip, setmanualbrokerip] = React.useState("")
+  const [manualbrokerport, setmanualbrokerport] = React.useState("")
+  
+
   return(
-    <Text></Text>
+    <SafeAreaView>
+      <Text style={{margin:'20%', marginBottom:0, fontSize:15,color:'black' }}>Broker IP:</Text>
+      <TextInput style={styles.brokersettinginput} maxLength={15} keyboardType="numeric" value={manualbrokerip} onChangeText={newvalue=>{setmanualbrokerip(newvalue)}}/>
+      <Text style={{margin:'2%', marginLeft:'20%', marginBottom:0, fontSize:15,color:'black' }}>Broker Port:</Text>
+      <TextInput style={styles.brokersettinginput} maxLength={5} keyboardType="numeric" value={manualbrokerport} onChangeText={newvalue=>{setmanualbrokerport(newvalue)}} />
+      <View style={{width:'60%', alignSelf:'center', marginTop:30}}>
+        <Button title="Connect Manually"/>
+      </View>
+      <View style={{width:'60%', alignSelf:'center', marginTop:10,}}>
+        <Button color="#841584" title="Instead: Connect Auto"/>
+      </View>
+    </SafeAreaView>
   )
 
 }
@@ -340,6 +355,25 @@ const styles = StyleSheet.create({
     borderRadius:5,
     borderTopLeftRadius:20
   },
+  brokersettinginput: {
+    alignSelf:'center',
+    fontSize:20,
+    color:'black',
+    fontWeight:'bold',
+    width:'60%',
+    borderColor:'black',
+    borderWidth:1
+  },
+  inputChat: {
+    marginLeft:10,
+    marginRight:0,
+    borderRadius: 10,
+    maxHeight:200,
+    width: '83%',
+    position: "absolute",
+    bottom: 0,
+    backgroundColor: 'white'
+  }, 
 });
 
 export default App;
