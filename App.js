@@ -148,7 +148,7 @@ const PrivateScreen = ({navigation}) => {
         
         <View style={{flexDirection:'row', justifyContent:'space-between', marginTop:10, height:'12%'}}>
           <View style={styles.inputChat}>
-            <TextInput placeholder="Your messegae..." multiline={true}/>
+            <TextInput style={{fontSize:16, fontWeight:'bold'}} placeholder="Your message..." multiline={true}/>
           </View>
           <Icon style={{marginLeft: '88%',}} size={40} type='font-awesome' name="telegram"/>
         </View>
@@ -314,7 +314,9 @@ const styles = StyleSheet.create({
     marginRight:0,
     borderWidth: 1,
     padding: 10,
-    width: '83%'
+    width: '83%',
+    color:'black',
+    fontWeight:'bold'
   },
   inputIDOfMe: {
     height: 40,
@@ -349,7 +351,7 @@ const styles = StyleSheet.create({
   },
   measrecieverchatview:{
     alignSelf:'flex-start',
-    fontSize:20,
+    fontSize:16,
     margin:10,
     marginLeft:5,
     color:'black',
@@ -361,7 +363,7 @@ const styles = StyleSheet.create({
   },
   brokersettinginput: {
     alignSelf:'center',
-    fontSize:20,
+    fontSize:16,
     color:'black',
     fontWeight:'bold',
     width:'60%',
@@ -377,7 +379,7 @@ const styles = StyleSheet.create({
     width: '83%',
     position: "absolute",
     bottom: '55%',
-    backgroundColor: 'darkgray'
+    backgroundColor: 'darkgray',
   }, 
 });
 
