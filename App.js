@@ -20,6 +20,7 @@ import {
   Text,
   TextInput,
   ToastAndroid,
+  Touchable,
   useColorScheme,
   View,
 } from 'react-native';
@@ -131,7 +132,7 @@ const PrivateScreen = ({navigation}) => {
   return(
     <SafeAreaView style={{backgroundColor:'gray'}}>
       <KeyboardAvoidingView behavior="position">
-        <ScrollView ref={msgsviewref} style={{height:'87%', margin:10, marginBottom:0, width:'95%'}}>
+        <ScrollView ref={msgsviewref} style={{height:'88%', margin:3, marginBottom:0, width:'98%'}}>
           <Text style={styles.meassenderchatview}>Hello Amirhossein, how you doin?</Text>
           <Text style={styles.measrecieverchatview}>Hey, fine. Are you ready? I'll be there 10 mins later bro!</Text>
           <Text style={styles.measrecieverchatview}>Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG</Text>
@@ -142,11 +143,14 @@ const PrivateScreen = ({navigation}) => {
           <Text style={styles.measrecieverchatview}>Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG Looooooooooooong MSG</Text>
           <Text style={styles.meassenderchatview}>Yes you are using your past experience very well! that's great! you can bro! sjkdfsd kjhsdf hgfdjh jhkh sdjfhkknjsdfk jksd</Text>
           <Text style={styles.meassenderchatview}>Yes you are using your past experience very well! that's great! you can bro! sjkdfsd kjhsdf hgfdjh jhkh sdjfhkknjsdfk jksd</Text>
-
+          <Text></Text>
         </ScrollView>
-        <View style={{flexDirection:'row', justifyContent:'space-between', marginTop:15}}>
-          <TextInput placeholder="Your messegae..." multiline={true} style={styles.inputChat}/>
-          <Icon style={{marginLeft: '88%', marginTop:10,}} size={40} type='font-awesome' name="telegram"/>
+        
+        <View style={{flexDirection:'row', justifyContent:'space-between', marginTop:10, height:'12%'}}>
+          <View style={styles.inputChat}>
+            <TextInput placeholder="Your messegae..." multiline={true}/>
+          </View>
+          <Icon style={{marginLeft: '88%',}} size={40} type='font-awesome' name="telegram"/>
         </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
@@ -369,10 +373,11 @@ const styles = StyleSheet.create({
     marginRight:0,
     borderRadius: 10,
     maxHeight:200,
+    minHeight:70, 
     width: '83%',
     position: "absolute",
-    bottom: 0,
-    backgroundColor: 'white'
+    bottom: '55%',
+    backgroundColor: 'darkgray'
   }, 
 });
 
